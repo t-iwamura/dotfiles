@@ -18,11 +18,11 @@ bindkey '^N' history-beginning-search-forward
 setopt append_history
 # share the history between opened zshs
 setopt share_history
-# the number of commands that are loaded into memory from the history file
+# how many lines to be kept in memory
 export HISTSIZE=10000
-# the number of commands that are stored in the zsh history file
+# how many lines to be saved in history file
 export SAVEHIST=10000
-# refer to the path/location of the history file
+# designate history file in zsh
 export HISTFILE=${HOME}/.zsh_history
 
 # make less more friendly for non-text input files, see lesspipe(1)
@@ -123,13 +123,13 @@ autoload -Uz compinit && compinit -u
 
 
 man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-    LESS_TERMCAP_me=$'\E[0m' \
-    LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\E[38;5;246m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    env LESS_TERMCAP_mb=$'\e[1;32m' \
+    LESS_TERMCAP_md=$'\e[1;32m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[1;4;31m' \
     man "$@"
 }
 
@@ -144,7 +144,7 @@ fi
 export LIBGL_ALWAYS_INDIRECT=1
 
 # PATH settings
-# Add lammps dir to PATH
+# add lammps dir to PATH
 lammps_src_dir=${HOME}/usr/local/lammps/src
 if [ -d ${lammps_src_dir} ]; then
     export PATH=${PATH}:${lammps_src_dir}
@@ -156,7 +156,7 @@ mlpFe_dir=${HOME}/mlp-Fe/
 if [ -d ${mlpFe_dir} ]; then
     export PYTHONPATH=${PYTHONPATH}:${mlpFe_dir}
 fi
-ph_plotter_dir=${HOME}/mlp-Fe/phonon/ph_plotter
+ph_plotter_dir=${HOME}/usr/local/ph_plotter/
 if [ -d ${ph_plotter_dir} ]; then
     export PYTHONPATH=${PYTHONPATH}:${ph_plotter_dir}
 fi
@@ -169,6 +169,8 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # lammps settings
 if [ ${machine_name} = 'iwamura-srv' ]; then
     export OMP_NUM_THREADS=4
+elif [ ${machine_name} = 'mormon' ]; then
+    export OMP_NUM_THREADS=20
 fi
 
 # ASE settings
