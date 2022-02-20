@@ -2,15 +2,20 @@ if &compatible
   set nocompatible " Be iMproved
 endif
 
-" Required:
-set runtimepath+=/home/ougon/.cache/dein/repos/github.com/Shougo/dein.vim
+" define install_dir variable {{{
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+" }}}
 
 " Required:
-call dein#begin('/home/ougon/.cache/dein')
+set runtimepath+=${HOME}/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin(s:dein_dir)
 
 " Let dein manage dein
 " Required:
-call dein#add('/home/ougon/.cache/dein/repos/github.com/Shougo/dein.vim')
+call dein#add(s:dein_repo_dir)
 
 " Add or remove your plugins here like this:
 "call dein#add('Shougo/deoplete.nvim')
@@ -29,10 +34,6 @@ syntax enable
 "endif
 
 " dein.vim settings {{{
-" install dir {{{
-let s:dein_dir = expand('~/.cache/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-" }}}
 
 " dein installation check {{{
 if &runtimepath !~# '/dein.vim'
@@ -99,6 +100,8 @@ set smarttab
 set laststatus=2
 " show column number
 set number
+" Highlight current line
+set cursorline
 " show invisible spaces
 set list
 
@@ -126,42 +129,42 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_theme='dark'
-"
-"" coc.nvim settings
-"set hidden
-"set nobackup
-"set nowritebackup
-"" Give more space for displaying messages.
-"set cmdheight=2
-"" extend updatetime
-"set updatetime=300
-"" Don't pass messages to |ins-completion-menu|.
-"set shortmess+=c
-"" Always show the signcolumn
-"if has("nvim-0.5.0") || has("patch-8.1.1564")
-"  set signcolumn=number
-"else
-"  set signcolumn=yes
-"endif
-"" Use tab for trigger completion with characters ahead and navigate.
-"inoremap <silent><expr> <TAB>
-"      \ pumvisible() ? "\<C-n>" :
-"      \ <SID>check_back_space() ? "\<TAB>" :
-"      \ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-"
-"function! s:check_back_space() abort
-"  let col = col('.') - 1
-"  return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
-"
-"" Use <c-space> to trigger completion.
-"if has('nvim')
-"  inoremap <silent><expr> <c-space> coc#refresh()
-"else
-"  inoremap <silent><expr> <c-@> coc#refresh()
-"endif
-"
-"" Make <CR> auto-select the first completion item
-"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-"                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" coc.nvim settings
+set hidden
+set nobackup
+set nowritebackup
+" Give more space for displaying messages.
+set cmdheight=2
+" extend updatetime
+set updatetime=300
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+" Always show the signcolumn
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
