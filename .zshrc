@@ -148,7 +148,7 @@ export LIBGL_ALWAYS_INDIRECT=1
 lammps_src_dir=${HOME}/usr/local/lammps/src
 if [ -d ${lammps_src_dir} ]; then
     export PATH=${PATH}:${lammps_src_dir}
-    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${HOME}/usr/local/lammps/src/
+    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${lammps_src_dir}
 fi
 
 # PYTHONPATH
