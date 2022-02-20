@@ -33,9 +33,6 @@ export HISTFILE=${HOME}/.zsh_history
 #esac
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
 alias ls='ls --color=auto -F -w 77'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -135,8 +132,11 @@ man() {
     man "$@"
 }
 
-# wsl DISPLAY setting
-if grep -q 'wsl.conf' /etc/resolv.conf; then
+# get machine name
+machine_name=$(hostname)
+# wsl setting
+if [ ${machine_name} = 'DESKTOP-RKO1Q0T' ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 fi
 # avoid libGL error
