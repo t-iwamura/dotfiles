@@ -1,4 +1,5 @@
 # Created by newuser for 5.8
+# Common settings
 ########################## zsh history settings ########################
 # don't put duplicate lines or lines starting with space in the history.
 setopt hist_ignore_dups
@@ -142,11 +143,33 @@ fi
 # avoid libGL error
 export LIBGL_ALWAYS_INDIRECT=1
 
+# PATH settings
+# Add lammps dir to PATH
+lammps_src_dir=${HOME}/usr/local/lammps/src
+if [ -d ${lammps_src_dir} ]; then
+    export PATH=${PATH}:${lammps_src_dir}
+    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${HOME}/usr/local/lammps/src/
+fi
+
+# PYTHONPATH
+mlpFe_dir=${HOME}/mlp-Fe/
+if [ -d ${mlpFe_dir} ]; then
+    export PYTHONPATH=${PYTHONPATH}:${mlpFe_dir}
+fi
+ph_plotter_dir=${HOME}/mlp-Fe/phonon/ph_plotter
+if [ -d ${ph_plotter_dir} ]; then
+    export PYTHONPATH=${PYTHONPATH}:${ph_plotter_dir}
+fi
+
 # pyenv-virtualenv setting
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
-# PYTHONPATH
-export PYTHONPATH=${PYTHONPATH}:${HOME}/mlp-Fe/
-cd
+# lammps settings
+if [ ${machine_name} = 'iwamura-srv' ]; then
+    export OMP_NUM_THREADS=4
+fi
+
+# ASE settings
+export ASE_LAMMPSRUN_COMMAND='lmp_serial'
