@@ -144,6 +144,10 @@ fi
 export LIBGL_ALWAYS_INDIRECT=1
 
 # PATH settings
+# add ~/bin to PATH
+if [ -d ${HOME}/bin ]; then
+    export PATH=${PATH}:${HOME}/bin
+fi
 # add lammps dir to PATH
 lammps_src_dir=${HOME}/usr/local/lammps/src
 if [ -d ${lammps_src_dir} ]; then
@@ -159,6 +163,10 @@ fi
 ph_plotter_dir=${HOME}/usr/local/ph_plotter/
 if [ -d ${ph_plotter_dir} ]; then
     export PYTHONPATH=${PYTHONPATH}:${ph_plotter_dir}
+fi
+vega_tools=${HOME}/tools/
+if [ -d ${vega_tools} ]; then
+    export PYTHONPATH=${PYTHONPATH}:${vega_tools}
 fi
 
 # pyenv-virtualenv setting
