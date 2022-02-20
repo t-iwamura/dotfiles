@@ -135,8 +135,11 @@ man() {
     man "$@"
 }
 
+# wsl DISPLAY setting
+if grep -q 'wsl.conf' /etc/resolv.conf; then
+    export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+fi
 # avoid libGL error
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 export LIBGL_ALWAYS_INDIRECT=1
 
 # pyenv-virtualenv setting
