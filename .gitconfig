@@ -1,13 +1,23 @@
 [user]
 	name = Taiki Iwamura
 	email = iwamura.taiki.43e@st.kyoto-u.ac.jp
+
 [color]
 	ui = auto
+
+[color "diff"]
+	meta = white bold
+	frag = cyan bold
+	old = red
+	new = green
+
 [alias]
 	st = status
-	graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
-	gr = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 	cm = commit -m
 	difff = diff --word-diff
+	# display changes since the latest commit
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 	ch = checkout
 	br = branch
+	alias = config --get-regexp alias
