@@ -78,6 +78,7 @@ if len(s:removed_plugins) > 0
 endif
 " }}}
 
+" activate syntax highlighting
 syntax on
 set encoding=utf-8
 " VIM color setting
@@ -95,12 +96,19 @@ set expandtab
 " add spaces of shiftwidth when depressing tab key
 set smarttab
 
-" display settings of status
+" display settings
 " show status line
 set laststatus=2
-" show column number
+" display column number
 set number
-" Highlight current line
+" use relative column number
+if exists("&relativenumber")
+    set relativenumber
+    au BufReadPost * set relativenumber
+endif
+" always display 5 lines around the cursor when scrolling
+set scrolloff=5
+" highlight current line number
 set cursorline
 " show invisible spaces
 set list
@@ -118,9 +126,11 @@ set clipboard=unnamed,autoselect
 set autoindent
 " show the parenthese to match that before it
 set showmatch
-" enable hlsearch
+" Add g option by default when searching/replacing strings
+set gdefault
+" highlight detected strings
 set hlsearch
-" enable incsearch
+" highlight strings dynamically when searching for pattern
 set incsearch
 
 " Plugins Settings
