@@ -114,6 +114,8 @@ set cursorline
 set list
 
 " editting settings
+" Remap Esc key in vim
+inoremap jj <Esc>
 " enable complementation in command line
 set virtualedit=onemore
 " enable to move to column end
