@@ -156,10 +156,6 @@ if [ -d ${lammps_src_dir} ]; then
 fi
 
 # PYTHONPATH
-mlpFe_dir=${HOME}/mlp-Fe/
-if [ -d ${mlpFe_dir} ]; then
-    export PYTHONPATH=${PYTHONPATH}:${mlpFe_dir}
-fi
 ph_plotter_dir=${HOME}/usr/local/ph_plotter/
 if [ -d ${ph_plotter_dir} ]; then
     export PYTHONPATH=${PYTHONPATH}:${ph_plotter_dir}
