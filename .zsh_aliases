@@ -1,0 +1,11 @@
+alias ipython='python -m IPython'
+alias mylammps='lmp_serial'
+# git aliases
+alias gst='git status'
+alias ga='git add'
+alias gcm='git cm'
+alias gch='git ch'
+alias gbr='git br'
+alias gl='git l'
+alias pull='git pull'
+alias push='git push'
