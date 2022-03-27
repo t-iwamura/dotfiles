@@ -3,6 +3,8 @@ alias mylammps='lmp_serial'
 # git aliases
 alias gst='git status'
 alias ga='git add'
+alias reset='git reset'
+alias unstage='git reset HEAD -- .'
 alias gcm='git cm'
 alias gch='git ch'
 alias gbr='git br'
