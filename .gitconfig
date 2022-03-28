@@ -14,6 +14,7 @@
 [alias]
 	st = status
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	ll = log --pretty=oneline --graph --abbrev-commit -n
 	cm = commit -m
 	difff = diff --word-diff
 	# display changes since the latest commit
