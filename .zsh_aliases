@@ -1,6 +1,11 @@
+# Get machine name
+machine_name=$(hostname)
+
+# Common settings
+# Basic aliases
+alias mkpy37='pyenv activate py37'
 alias ipython='python -m IPython'
-alias mylammps='lmp_serial'
-# git aliases
+# Git aliases
 alias gst='git status'
 alias ga='git add'
 alias unstage='git reset HEAD -- .'
@@ -10,3 +15,18 @@ alias gbr='git br'
 alias gl='git l'
 alias pull='git pull'
 alias push='git push'
+
+# Different settings
+if [ ${machine_name} = 'DESKTOP-RKO1Q0T' ]; then
+    alias cddl='cd /mnt/c/Users/iwamura/Downloads/'
+elif [ ${machine_name} = 'iwamura-srv' ]; then
+    alias ide='source ~/bin/tmux_arange.sh'
+    alias mylammps='lmp_serial'
+    alias rres='tail -n+1 */stdout | grep -e test -e stdout \
+                -e elapsed | grep -e "^ rmse" -e stdout -e elapsed'
+elif [ ${machine_name} = 'mormon' ]; then
+    alias mylammps='lmp_serial'
+fi
+
+# Common settings for calculator
+

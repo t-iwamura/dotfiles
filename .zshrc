@@ -179,3 +179,8 @@ fi
 
 # ASE settings
 export ASE_LAMMPSRUN_COMMAND='lmp_serial'
+
+# fzf settings
+# Enable auto completion of fzf
+source /usr/share/doc/fzf/examples/completion.zsh
+
