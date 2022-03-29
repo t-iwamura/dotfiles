@@ -1,5 +1,8 @@
+# Get machine name
+machine_name=$(hostname)
+
+# Common settings
 alias ipython='python -m IPython'
-alias mylammps='lmp_serial'
 # git aliases
 alias gst='git status'
 alias ga='git add'
@@ -10,3 +13,11 @@ alias gbr='git br'
 alias gl='git l'
 alias pull='git pull'
 alias push='git push'
+
+# Different settings
+if [ ${machine_name} = 'DESKTOP-RKO1Q0T' ]; then
+    alias cddl='cd /mnt/c/Users/iwamura/Downloads/'
+elif [ ${machine_name} = 'iwamura-srv' ]; then
+    alias mylammps='lmp_serial'
+fi
+
