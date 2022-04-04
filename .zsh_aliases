@@ -4,7 +4,6 @@ machine_name=$(hostname)
 # Common settings
 # Basic aliases
 alias mkpy38='pyenv activate py38'
-alias ipython='python -m IPython'
 # Git aliases
 alias gst='git status'
 alias ga='git add'
@@ -26,6 +25,11 @@ elif [ ${machine_name} = 'iwamura-srv' ]; then
                 -e elapsed | grep -e "^ rmse" -e stdout -e elapsed'
 elif [ ${machine_name} = 'mormon' ]; then
     alias mylammps='lmp_serial'
+elif [[ ${machine_name} == 'vega'* ]]; then
+    alias clndir='rm -f CHG DOSCAR IBZKPT PCDAT REPORT EIGENVAL OSZICAR \
+                std.log XDATCAR CONTCAR err.log OUTCAR CHGCAR WAVECAR \
+                vasprun.xml POSCAR.init'
+    alias qst='qstat'
 fi
 
 # Common settings for calculator
