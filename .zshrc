@@ -34,7 +34,8 @@ export HISTFILE=${HOME}/.zsh_history
 #esac
 
 # enable color support of ls and also add handy aliases
-alias ls='ls --color=auto -F -w 77'
+export LSCOLORS="gxfxcxdxbxexexabagacad"
+alias ls='ls -FG'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
