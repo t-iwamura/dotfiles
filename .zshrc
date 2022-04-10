@@ -182,5 +182,8 @@ export ASE_LAMMPSRUN_COMMAND='lmp_serial'
 
 # fzf settings
 # Enable auto completion of fzf
-source /usr/share/doc/fzf/examples/completion.zsh
+fzf_completion_file=/usr/share/doc/fzf/examples/completion.zsh
+if [ -f ${fzf_completion_file} ]; then
+    source ${fzf_completion_file}
+fi
 
