@@ -93,7 +93,43 @@ function left-prompt {
     echo "${user}%n@%m${back_color}${path_b}${text_color}${name_b}${sharp} ${dir}%~${reset}${text_color}${path_b}${sharp}${reset}\n${text_color}${arrow}> ${reset}"
 }
 
+function rprompt-git-current-branch {
+    local branch_name st branch_status
+
+    branch='\ue0a0'
+    color='%{\e[38;5;'
+    green='114m%}'
+    red='001m%}'
+    yellow='227m%}'
+    blue='033m%}'
+    reset='%{\e[0m%}'
+
+    if [ ! -e ".git" ]; then
+        # return nothing when not in directory with .git
+        return
+    fi
+    branch_name=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+    st=$(git status 2> /dev/null)
+    if [[ -n $(echo "${st}" | grep "^nothing to") ]]; then
+        branch_status="${color}${green}${branch}"
+    elif [[ -n $(echo "${st}" | grep "^Untracked files") ]]; then
+        branch_status="${color}${red}${branch}?"
+    elif [[ -n $(echo "${st}" | grep "^Changes not staged for commit") ]]; then
+        branch_status="${color}${red}${branch}+"
+    elif [[ -n $(echo "${st}" | grep "^Changes to be committed") ]]; then
+        branch_status="${color}${yellow}${branch}!"
+    elif [[ -n $(echo "${st}" | grep "^rebase in progress") ]]; then
+        branch_status="${color}${red}${branch}!(no branch)${reset}"
+        return
+    else
+        branch_status="${color}${blue}${branch}"
+    fi
+    echo "${branch_status}${branch_name}${reset}"
+}
+
+
 PROMPT=$(left-prompt)
+RPROMPT='$(rprompt-git-current-branch)'
 
 ####################### Alias definitions ##########################
 # You may want to put all your additions into a separate file like
