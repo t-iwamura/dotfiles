@@ -22,3 +22,5 @@
 	ch = checkout
 	br = branch
 	alias = config --get-regexp alias
+[core]
+	editor = vim -c \"set fenc=utf-8\"
