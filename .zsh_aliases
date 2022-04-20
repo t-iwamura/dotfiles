@@ -18,11 +18,14 @@ alias push='git push'
 # Different settings
 if [ ${machine_name} = 'DESKTOP-RKO1Q0T' ]; then
     alias cddl='cd /mnt/c/Users/iwamura/Downloads/'
+elif [ ${machine_name} = 'h103.7.232.10.10875.vlan.kuins.net' ]; then
+    alias jupyter_local='ssh -N -L localhost:8887:localhost:8887 srv'
 elif [ ${machine_name} = 'iwamura-srv' ]; then
     alias ide='source ~/bin/tmux_arange.sh'
     alias mylammps='lmp_serial'
     alias rres='tail -n+1 */stdout | grep -e test -e stdout \
                 -e elapsed | grep -e "^ rmse" -e stdout -e elapsed'
+    alias jupyter_srv='jupyter lab --port 8887'
 elif [ ${machine_name} = 'mormon' ]; then
     alias mylammps='lmp_serial'
 elif [[ ${machine_name} == 'vega'* ]]; then
