@@ -23,6 +23,7 @@ elif [ ${machine_name} = 'iwamura-srv' ]; then
     alias mylammps='lmp_serial'
     alias rres='tail -n+1 */stdout | grep -e test -e stdout \
                 -e elapsed | grep -e "^ rmse" -e stdout -e elapsed'
+    alias jupyter_srv='jupyter lab --port 8887'
 elif [ ${machine_name} = 'mormon' ]; then
     alias mylammps='lmp_serial'
 elif [[ ${machine_name} == 'vega'* ]]; then
