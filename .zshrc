@@ -190,7 +190,7 @@ if [ -d ${HOME}/bin ]; then
     export PATH=${PATH}:${HOME}/bin
 fi
 # add lammps dir to PATH
-lammps_src_dir=${HOME}/usr/local/lammps/src
+lammps_src_dir=${HOME}/usr/local/lammps-patch_29Oct2020/src
 if [ -d ${lammps_src_dir} ]; then
     export PATH=${PATH}:${lammps_src_dir}
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${lammps_src_dir}
