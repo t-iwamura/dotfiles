@@ -34,7 +34,7 @@ export HISTFILE=${HOME}/.zsh_history
 #esac
 
 # enable color support of ls and also add handy aliases
-if [[ $(hostname) = *"Mac"* ]]; then
+if [[ $(hostname) = *"Mac"* ]] || [ $(hostname) = 'h103.7.232.10.10875.vlan.kuins.net' ]; then
     export LSCOLORS="gxfxcxdxbxexexabagacad"
     alias ls='ls -FG'
 else
