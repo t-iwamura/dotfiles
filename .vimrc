@@ -1,6 +1,4 @@
-if &compatible
-  set nocompatible " Be iMproved
-endif
+set nocompatible " Be iMproved
 
 " define install_dir variable {{{
 let s:dein_dir = expand('~/.cache/dein')
@@ -26,7 +24,6 @@ call dein#end()
 
 " Required:
 filetype plugin indent on
-syntax enable
 
 " If you want to install not installed plugins on startup.
 "if dein#check_install()
@@ -82,9 +79,15 @@ endif
 syntax on
 set encoding=utf-8
 " VIM color setting
-let g:hybrid_custom_term_colors = 1
+if (has("nvim"))
+    " For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+if (has("termguicolors"))
+    set termguicolors
+endif
+colorscheme onedark
 set background=dark
-colorscheme hybrid
 
 " TAB settings
 " how many spaces are regarded as tab
@@ -140,7 +143,7 @@ set incsearch
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline_theme='dark'
+let g:airline_theme='onedark'
 
 " coc.nvim settings
 set hidden
