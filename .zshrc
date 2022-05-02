@@ -34,7 +34,7 @@ export HISTFILE=${HOME}/.zsh_history
 #esac
 
 # enable color support of ls and also add handy aliases
-if [[ $(hostname) = *"Mac"* ]]; then
+if [[ $(hostname) = *"Mac"* ]] || [ $(hostname) = 'h103.7.232.10.10875.vlan.kuins.net' ]; then
     export LSCOLORS="gxfxcxdxbxexexabagacad"
     alias ls='ls -FG'
 else
@@ -190,7 +190,7 @@ if [ -d ${HOME}/bin ]; then
     export PATH=${PATH}:${HOME}/bin
 fi
 # add lammps dir to PATH
-lammps_src_dir=${HOME}/usr/local/lammps/src
+lammps_src_dir=${HOME}/usr/local/lammps-patch_29Oct2020/src
 if [ -d ${lammps_src_dir} ]; then
     export PATH=${PATH}:${lammps_src_dir}
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${lammps_src_dir}
