@@ -16,7 +16,7 @@ repo = 'neoclide/coc.nvim'
 merged = '0'
 rev = 'release'
 
-#[[plugins]]
-#repo = 'sheerun/vim-polyglot'
-#merged = '0'
-#
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+merged = '0'
+
