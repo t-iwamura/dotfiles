@@ -28,6 +28,7 @@ elif [ ${machine_name} = 'iwamura-srv' ]; then
     alias jupyter_srv='jupyter lab --port 8887'
 elif [ ${machine_name} = 'mormon' ]; then
     alias mylammps='lmp_serial'
+    alias sshfs_srv='sudo sshfs -p 52807 -o allow_other,default_permissions,IdentityFile=/home/iwamura/.ssh/id_ed25519 iwamura@10.232.7.180:/home/iwamura/ /home/iwamura/srv_home'
 elif [[ ${machine_name} == 'vega'* ]]; then
     alias clndir='rm -f CHG DOSCAR IBZKPT PCDAT REPORT EIGENVAL OSZICAR \
                 std.log XDATCAR CONTCAR err.log OUTCAR CHGCAR WAVECAR \
