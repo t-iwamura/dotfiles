@@ -190,7 +190,7 @@ if [ -d ${HOME}/bin ]; then
     export PATH=${PATH}:${HOME}/bin
 fi
 # add lammps dir to PATH
-lammps_src_dir=${HOME}/usr/local/lammps-patch_29Oct2020/src
+lammps_src_dir=${HOME}/usr/local/lammps/src
 if [ -d ${lammps_src_dir} ]; then
     export PATH=${PATH}:${lammps_src_dir}
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${lammps_src_dir}
@@ -210,13 +210,6 @@ fi
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-
-# lammps settings
-if [ ${machine_name} = 'iwamura-srv' ]; then
-    export OMP_NUM_THREADS=4
-elif [ ${machine_name} = 'mormon' ]; then
-    export OMP_NUM_THREADS=20
-fi
 
 # ASE settings
 export ASE_LAMMPSRUN_COMMAND='lmp_serial'
