@@ -26,6 +26,8 @@ elif [ ${machine_name} = 'iwamura-srv' ]; then
     alias rres='tail -n+1 */stdout | grep -e test -e stdout \
                 -e elapsed | grep -e "^ rmse" -e stdout -e elapsed'
     alias jupyter_srv='jupyter lab --port 8887'
+    alias make_fc='phonopy -f disp-{001..048}/vasprun.xml && cp ~/mormon_mlp-Fe/mlp-Fe/phonon/dft/try8/writefc.conf . && phonopy writefc.conf \
+                    && mv POSCAR relaxed_poscar && cp ~/mormon_mlp-Fe/mlp-Fe/phonon/dft/try8/POSCAR* . && cp ~/mormon_mlp-Fe/mlp-Fe/phonon/dft/try8/band.conf && upho_weights band.conf --average_force_constants && mkdir postprocess && mv FORCE_CONSTANTS FORCE_CONSTANTS_DISORDER && mv FORCE_CONSTANTS_SPG FORCE_CONSTANTS && cp FORCE_CONSTANTS postprocess/ && cp POSCAR_ideal postprocess/POSCAR'
 elif [ ${machine_name} = 'mormon' ]; then
     alias mylammps='lmp_serial'
     alias sshfs_srv='sudo sshfs -p 52807 -o allow_other,default_permissions,IdentityFile=/home/iwamura/.ssh/id_ed25519 iwamura@10.232.7.180:/home/iwamura/ /home/iwamura/srv_home'
