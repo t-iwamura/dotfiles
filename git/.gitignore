@@ -1,0 +1,6 @@
+# Folder view configuration files
+.DS_Store
+.netrwhist
+*.log
+Desktop.ini
+

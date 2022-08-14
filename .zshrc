@@ -34,7 +34,7 @@ export HISTFILE=${HOME}/.zsh_history
 #esac
 
 # enable color support of ls and also add handy aliases
-if [[ $(hostname) = *"Mac"* ]] || [ $(hostname) = 'h103.7.232.10.10875.vlan.kuins.net' ]; then
+if [[ $(hostname) = *"Mac"* ]] || [ $(hostname) = 'h115.7.232.10.10875.vlan.kuins.net' ]; then
     export LSCOLORS="gxfxcxdxbxexexabagacad"
     alias ls='ls -FG'
 else
@@ -209,6 +209,8 @@ if [ -d ${vega_tools} ]; then
 fi
 
 # pyenv-virtualenv setting
+export PYENV_ROOT=${HOME}/.pyenv
+command -v pyenv >/dev/null || export PATH="${PYENV_ROOT}/bin:${PATH}"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
@@ -223,3 +225,7 @@ if [ -f ${fzf_completion_file} ]; then
     source ${fzf_completion_file}
 fi
 
+# yarn settings
+if [ -d ${HOME}/.yarn ]; then
+    export PATH="${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:${PATH}"
+fi
