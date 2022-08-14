@@ -24,5 +24,6 @@
 	alias = config --get-regexp alias
 [core]
 	editor = vim -c \"set fenc=utf-8\"
+	excludesFile = ~/.gitignore
 [init]
 	defaultBranch = main
