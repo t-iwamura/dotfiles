@@ -3,7 +3,7 @@ machine_name=$(hostname)
 
 # Common settings
 # Basic aliases
-alias mkpy38='pyenv activate py38'
+alias mkpy='pyenv activate py39'
 # Git aliases
 alias gst='git status'
 alias ga='git add'
