@@ -191,6 +191,12 @@ if [ -d ${lammps_src_dir} ]; then
     export PATH=${PATH}:${lammps_src_dir}
     export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${lammps_src_dir}
 fi
+# OpenMP setting for LAMMPS
+if [ ${machine_name} = 'iwamura-srv' ]; then
+    export OMP_NUM_THREADS=4
+elif [ ${machine_name} = 'mormon' ]; then
+    export OMP_NUM_THREADS=20
+fi
 
 # pyenv-virtualenv setting
 export PYENV_ROOT=${HOME}/.pyenv
