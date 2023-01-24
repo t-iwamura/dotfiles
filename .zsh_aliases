@@ -3,6 +3,7 @@ machine_name=$(hostname)
 
 # Common settings
 # Basic aliases
+alias sudovim='env SUDO_EDITOR=vim sudoedit'
 alias mkpy='pyenv activate py39'
 # Git aliases
 alias gst='git status'
@@ -50,4 +51,3 @@ elif [[ ${machine_name} == 'vega'* ]]; then
 fi
 
 # Common settings for calculator
-
