@@ -19,9 +19,9 @@ setopt append_history
 # share the history between opened zshs
 setopt share_history
 # how many lines to be kept in memory
-export HISTSIZE=10000
+export HISTSIZE=40000
 # how many lines to be saved in history file
-export SAVEHIST=10000
+export SAVEHIST=40000
 # designate history file in zsh
 export HISTFILE=${HOME}/.zsh_history
 
