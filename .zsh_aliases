@@ -15,12 +15,13 @@ alias gbr='git br'
 alias gl='git l'
 alias pull='git pull'
 alias push='git push'
+# AtCoder aliases
+alias ojt='oj t -d ./tests'
 
 # Different settings
 if [ ${machine_name} = 'DESKTOP-RKO1Q0T' ]; then
     alias cddl='cd /mnt/c/Users/iwamura/Downloads/'
 elif [ ${machine_name} = 'Taikis-Mac-mini.local' ]; then
-    alias ojt='oj t -d ./tests'
     alias tap='\brew tap'
     alias brew='brew install'
     alias cask='\brew install --cask'
