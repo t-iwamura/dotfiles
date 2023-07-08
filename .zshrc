@@ -185,6 +185,9 @@ export LIBGL_ALWAYS_INDIRECT=1
 if [ -d ${HOME}/bin ]; then
     export PATH=${PATH}:${HOME}/bin
 fi
+if [ -d "/opt/homebrew" ]; then
+    export PATH="/opt/homebrew/opt/unzip/bin:$PATH"
+fi
 # add lammps dir to PATH
 lammps_src_dir=${HOME}/usr/local/lammps/src
 if [ -d ${lammps_src_dir} ]; then
