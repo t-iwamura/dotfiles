@@ -5,6 +5,7 @@ machine_name=$(hostname)
 # Basic aliases
 alias sudovim='env SUDO_EDITOR=vim sudoedit'
 alias mkpy='pyenv activate py39'
+alias pyst='pyenv activate structural_search'
 # Git aliases
 alias gst='git status'
 alias ga='git add'
