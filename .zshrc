@@ -55,6 +55,15 @@ bindkey '^[r' redo
 
 
 ####################### prompt customization #######################
+# pyenv-virtualenv setting
+export PYENV_ROOT=${HOME}/.pyenv
+if [ -d ${PYENV_ROOT} ]; then
+    command -v pyenv >/dev/null || export PATH="${PYENV_ROOT}/bin:${PATH}"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+fi
+
 function left-prompt {
     # color settings
     name_t='226m%}'
@@ -69,7 +78,7 @@ function left-prompt {
 
     user="${back_color}${name_b}${text_color}${name_t}"
     dir="${back_color}${path_b}${text_color}${path_t}"
-    echo "${user}%n@%m${back_color}${path_b}${text_color}${name_b}${sharp} ${dir}%~${reset}${text_color}${path_b}${sharp}${reset}\n${text_color}${arrow}> ${reset}"
+    echo "${user}%n@%m${back_color}${path_b}${text_color}${name_b}${sharp} ${dir}%~${reset}${text_color}${path_b}${sharp}${reset} ($(pyenv version-name | cut -d / -f 3))\n${text_color}${arrow}> ${reset}"
 }
 
 function rprompt-git-current-branch {
@@ -199,15 +208,6 @@ if [ ${machine_name} = 'iwamura-srv' ]; then
     export OMP_NUM_THREADS=4
 elif [ ${machine_name} = 'mormon' ]; then
     export OMP_NUM_THREADS=20
-fi
-
-# pyenv-virtualenv setting
-export PYENV_ROOT=${HOME}/.pyenv
-if [ -d ${PYENV_ROOT} ]; then
-    command -v pyenv >/dev/null || export PATH="${PYENV_ROOT}/bin:${PATH}"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 fi
 
 # ASE settings
