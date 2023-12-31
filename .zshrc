@@ -224,3 +224,7 @@ fi
 if [ -d ${HOME}/.yarn ]; then
     export PATH="${HOME}/.yarn/bin:${HOME}/.config/yarn/global/node_modules/.bin:${PATH}"
 fi
+
+# mojo settings
+export MODULAR_HOME=${HOME}/.modular
+export PATH=${HOME}/.modular/pkg/packages.modular.com_mojo/bin:${PATH}
