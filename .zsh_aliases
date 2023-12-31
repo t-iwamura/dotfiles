@@ -6,6 +6,9 @@ machine_name=$(hostname)
 alias sudovim='env SUDO_EDITOR=vim sudoedit'
 alias mkpy='pyenv activate py39'
 alias pyst='pyenv activate structural_search'
+# tmux aliases
+alias ts='tmux new -s'
+alias ta='tmux attach'
 # Git aliases
 alias gst='git status'
 alias ga='git add'
