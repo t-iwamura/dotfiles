@@ -64,59 +64,7 @@ if [ -d ${PYENV_ROOT} ]; then
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 fi
 
-function left-prompt {
-    # color settings
-    name_t='226m%}'
-    name_b='009m%}'
-    path_t='195m%}'
-    path_b='031m%}'
-    arrow='214m%}'
-    text_color='%{\e[38;5;'
-    back_color='%{\e[30;48;5;'
-    reset='%{\e[0m%}'
-    sharp='\uE0B0'
-
-    user="${back_color}${name_b}${text_color}${name_t}"
-    dir="${back_color}${path_b}${text_color}${path_t}"
-    echo "${user}%n@%m${back_color}${path_b}${text_color}${name_b}${sharp} ${dir}%~${reset}${text_color}${path_b}${sharp}${reset} ($(pyenv version-name | cut -d / -f 3))\n${text_color}${arrow}> ${reset}"
-}
-
-function rprompt-git-current-branch {
-    local branch_name st branch_status
-
-    branch='\ue0a0'
-    color='%{\e[38;5;'
-    green='114m%}'
-    red='001m%}'
-    yellow='227m%}'
-    blue='033m%}'
-    reset='%{\e[0m%}'
-
-    if [ ! -e ".git" ]; then
-        # return nothing when not in directory with .git
-        return
-    fi
-    branch_name=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
-    st=$(git status 2> /dev/null)
-    if [[ -n $(echo "${st}" | grep "^nothing to") ]]; then
-        branch_status="${color}${green}${branch}"
-    elif [[ -n $(echo "${st}" | grep "^Untracked files") ]]; then
-        branch_status="${color}${red}${branch}?"
-    elif [[ -n $(echo "${st}" | grep "^Changes not staged for commit") ]]; then
-        branch_status="${color}${red}${branch}+"
-    elif [[ -n $(echo "${st}" | grep "^Changes to be committed") ]]; then
-        branch_status="${color}${yellow}${branch}!"
-    elif [[ -n $(echo "${st}" | grep "^rebase in progress") ]]; then
-        branch_status="${color}${red}${branch}!(no branch)${reset}"
-        return
-    else
-        branch_status="${color}${blue}${branch}"
-    fi
-    echo "${branch_status}${branch_name}${reset}"
-}
-
-PROMPT=$(left-prompt)
-RPROMPT='$(rprompt-git-current-branch)'
+eval "$(starship init zsh)"
 
 
 ####################### Alias definitions ##########################
