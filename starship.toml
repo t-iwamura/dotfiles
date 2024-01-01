@@ -1,0 +1,5 @@
+[python]
+format = 'via [${pyenv_prefix}(\($virtualenv\) )]($style)'
+
+[conda]
+disabled = true
