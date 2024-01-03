@@ -1,3 +1,6 @@
+[hostname]
+ssh_symbol = '🌐'
+
 [python]
 format = 'via [${pyenv_prefix}(\($virtualenv\) )]($style)'
 
