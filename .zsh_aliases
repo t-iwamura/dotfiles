@@ -8,6 +8,7 @@ alias mkpy='pyenv activate py39'
 alias pyst='pyenv activate structural_search'
 # tmux aliases
 alias ts='tmux new -s'
+alias tl='tmux ls'
 alias ta='tmux attach'
 # Git aliases
 alias gst='git status'
