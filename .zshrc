@@ -64,7 +64,9 @@ if [ -d ${PYENV_ROOT} ]; then
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 fi
 
-eval "$(starship init zsh)"
+if [ -e ${HOME}/.cargo/bin/starship ]; then
+    eval "$(starship init zsh)"
+fi
 
 
 ####################### Alias definitions ##########################
