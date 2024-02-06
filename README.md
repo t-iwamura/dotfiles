@@ -43,6 +43,16 @@ ln -s ~/dotfiles/.vimrc ~ \
 && git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
 ```
 
+### Starship
+
+1. Install Rust.
+2. Install Starship.
+3. Run following command.
+```shell
+mkdir -p ~/.config \
+&& ln -s ~/dotfiles/starship.toml ~/.config
+```
+
 
 # On Mac with Alacritty
 
