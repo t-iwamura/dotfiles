@@ -11,6 +11,7 @@ cd \
 ```
 
 ### zsh
+
 ```shell
 ln -s ~/dotfiles/.zshenv ~ \
 && ln -s ~/dotfiles/.zshrc ~ \
@@ -19,17 +20,22 @@ ln -s ~/dotfiles/.zshenv ~ \
 ```
 
 ### Git
+
 ```shell
 ln -s ~/dotfiles/.gitconfig ~ \
 && ln -s ~/dotfiles/git/.gitignore ~
 ```
 
 ### tmux
+
+Run following commands and enter "prefix + I".
 ```shell
-ln -s ~/dotfiles/.tmux.conf ~
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
+&& ln -s ~/dotfiles/.tmux.conf ~
 ```
 
 ### Vim
+
 ```shell
 ln -s ~/dotfiles/.vimrc ~ \
 && git clone git@github.com:joshdick/onedark.vim.git ~/.vim/pack/dist/opt/onedark.vim \
@@ -39,6 +45,7 @@ ln -s ~/dotfiles/.vimrc ~ \
 
 
 # On Mac with Alacritty
+
 ```shell
 ln -s ~/dotfiles/.alacritty.yml ~
 ```
