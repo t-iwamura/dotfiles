@@ -4,28 +4,33 @@ Collection repository of my dotfiles
 
 ## Usage
 
+First, clone dotfiles under home directory.
 ```shell
-# Clone dotfiles under home directory
-$ cd
-$ git clone git@github.com:iwamura-lab/dotfiles.git
+cd \
+&& git clone git@github.com:iwamura-lab/dotfiles.git
+```
 
-# Create symbolic links
-# zsh
-$ ln -s ~/dotfiles/.zshenv ~
-$ ln -s ~/dotfiles/.zshrc ~
-$ ln -s ~/dotfiles/.zprofile ~
-$ ln -s ~/dotfiles/.zsh_aliases ~
+### zsh
+```shell
+ln -s ~/dotfiles/.zshenv ~ \
+&& ln -s ~/dotfiles/.zshrc ~ \
+&& ln -s ~/dotfiles/.zprofile ~ \
+&& ln -s ~/dotfiles/.zsh_aliases ~
+```
 
-# git
-$ ln -s ~/dotfiles/.gitconfig ~
-$ ln -s ~/dotfiles/git/.gitignore ~
+### Git
+```shell
+ln -s ~/dotfiles/.gitconfig ~ \
+&& ln -s ~/dotfiles/git/.gitignore ~
+```
 
-# tmux
-$ ln -s ~/dotfiles/.tmux.conf ~
+### tmux
+```shell
+ln -s ~/dotfiles/.tmux.conf ~
 ```
 
 ### Vim
-```
+```shell
 ln -s ~/dotfiles/.vimrc ~ \
 && git clone git@github.com:joshdick/onedark.vim.git ~/.vim/pack/dist/opt/onedark.vim \
 && git clone --depth 1 https://github.com/sheerun/vim-polyglot ~/.vim/pack/dist/start/vim-polyglot \
@@ -34,5 +39,6 @@ ln -s ~/dotfiles/.vimrc ~ \
 
 
 # On Mac with Alacritty
-$ ln -s ~/dotfiles/.alacritty.yml ~
+```shell
+ln -s ~/dotfiles/.alacritty.yml ~
 ```
