@@ -64,7 +64,7 @@ if [ -d ${PYENV_ROOT} ]; then
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 fi
 
-if [ -e ${HOME}/.cargo/bin/starship ]; then
+if [ -e ${HOME}/.cargo/bin/starship ] || [ -e /opt/homebrew/bin/starship ]; then
     eval "$(starship init zsh)"
 fi
 
