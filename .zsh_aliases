@@ -6,6 +6,7 @@ machine_name=$(hostname)
 alias sudovim='env SUDO_EDITOR=vim sudoedit'
 alias mkpy='pyenv activate py39'
 alias pyst='pyenv activate structural_search'
+alias calcin='. ~/calc/bin/activate'
 # tmux aliases
 alias ts='tmux new -s'
 alias tl='tmux ls'
