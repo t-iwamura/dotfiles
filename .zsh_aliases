@@ -3,6 +3,7 @@ machine_name=$(hostname)
 
 # Common settings
 # Basic aliases
+alias bel="printf '\a'"
 alias sudovim='env SUDO_EDITOR=vim sudoedit'
 alias mkpy='pyenv activate py39'
 alias pyst='pyenv activate structural_search'

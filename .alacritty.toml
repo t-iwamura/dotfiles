@@ -24,3 +24,9 @@ mods = "Option"
 
 [window]
 opacity = 0.7
+
+[bell]
+animation = "Linear"
+duration = 0
+color = "#ffffff"
+command = { program = "afplay", args = ["/System/Library/Sounds/Hero.aiff"] }
