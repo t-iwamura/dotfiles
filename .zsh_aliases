@@ -5,6 +5,7 @@ machine_name=$(hostname)
 # Basic aliases
 alias bel="printf '\a'"
 alias sudovim='env SUDO_EDITOR=vim sudoedit'
+alias du='ncdu'
 alias mkpy='pyenv activate py39'
 alias pyst='pyenv activate structural_search'
 alias calcin='. ~/calc/bin/activate'
