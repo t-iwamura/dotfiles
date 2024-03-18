@@ -28,7 +28,7 @@ ln -s ~/dotfiles/.gitconfig ~ \
 
 ### tmux
 
-Run following commands and enter "prefix + I".
+Install requirements for tmux-yank. Run following commands and enter "prefix + I".
 ```shell
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
 && ln -s ~/dotfiles/.tmux.conf ~
