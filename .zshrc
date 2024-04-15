@@ -141,6 +141,7 @@ export LIBGL_ALWAYS_INDIRECT=1
 
 # PATH settings
 # add ~/bin to PATH
+export PATH=${PATH}:${HOME}/.local/bin
 if [ -d ${HOME}/bin ]; then
     export PATH=${PATH}:${HOME}/bin
 fi
