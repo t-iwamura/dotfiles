@@ -31,8 +31,6 @@ export HISTFILE=${HOME}/.zsh_history
 ########################## basic settings ##########################
 # have zsh correct wrong command name
 setopt correct
-# change directory just by typing directory name
-setopt auto_cd
 # cd iwamura -> cd /home/iwamura/
 setopt cdable_vars
 # prohibit duplicated directory stack
