@@ -5,6 +5,8 @@
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
+# Immediately append to history file
+setopt inc_append_history
 # don't save history command
 setopt hist_no_store
 # automatically expand the command by history completion
