@@ -22,6 +22,8 @@ setopt share_history
 export HISTSIZE=40000
 # how many lines to be saved in history file
 export SAVEHIST=40000
+# Ignore these commands in history
+export HISTORY_IGNORE="(ls|pwd|cd)*"
 # designate history file in zsh
 export HISTFILE=${HOME}/.zsh_history
 
