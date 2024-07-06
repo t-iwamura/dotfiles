@@ -15,6 +15,9 @@ matches:
   - trigger: ":em"
     replace: "taiki-engineering@outlook.jp"
 
+  - trigger: ":aid"
+    replace: "seachan.daisuki@icloud.com"
+
   # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
 
   # But matches can also be dynamic:
