@@ -47,7 +47,8 @@ ln -s ~/dotfiles/.vimrc ~ \
 
 1. Install Rust.
 2. Install Starship.
-3. Run following command.
+3. Install CMake.
+4. Run following command.
 ```shell
 mkdir -p ~/.config \
 && ln -s ~/dotfiles/starship.toml ~/.config
@@ -57,5 +58,5 @@ mkdir -p ~/.config \
 # On Mac with Alacritty
 
 ```shell
-ln -s ~/dotfiles/.alacritty.yml ~
+ln -s ~/dotfiles/.alacritty.toml ~
 ```
