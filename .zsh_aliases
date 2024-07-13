@@ -34,7 +34,7 @@ alias ojt='oj t -d ./tests'
 # Different settings
 if [ ${machine_name} = 'DESKTOP-RKO1Q0T' ]; then
     alias cddl='cd /mnt/c/Users/iwamura/Downloads/'
-elif [ ${machine_name} = 'Taikis-Mac-mini.local' ]; then
+elif [[ ${machine_name} == *'Mac'* ]]; then
     alias tap='\brew tap'
     alias brew='brew install'
     alias cask='\brew install --cask'
