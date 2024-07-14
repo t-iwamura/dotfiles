@@ -137,7 +137,6 @@ if [ ${machine_name} = 'DESKTOP-RKO1Q0T' ]; then
     export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 elif [[ ${machine_name} = *"Mac"* ]]; then
     export PATH=/usr/local/bin:${PATH}
-    export EDITOR=/opt/homebrew/bin/vim
 fi
 # avoid libGL error
 export LIBGL_ALWAYS_INDIRECT=1
