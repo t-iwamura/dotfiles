@@ -163,6 +163,11 @@ elif [ ${machine_name} = 'mormon' ]; then
     export OMP_NUM_THREADS=20
 fi
 
+# CDPATH settings
+if [ ${machine_name} = 'iwamura-srv' ]; then
+    export CDPATH=${HOME}:/mnt/wd/backup/my_source_code:/mnt/wd/backup/PM-Fe_mlp
+fi
+
 # ASE settings
 export ASE_LAMMPSRUN_COMMAND='lmp_serial'
 
