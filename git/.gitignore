@@ -1,3 +1,6 @@
+# Private Settings
+/exp/
+
 # Folder view configuration files
 *.DS_Store
 .netrwhist
@@ -7,3 +10,21 @@ Desktop.ini
 # html
 .*.html
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
