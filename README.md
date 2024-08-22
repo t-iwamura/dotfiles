@@ -21,6 +21,7 @@ ln -s ~/dotfiles/.zshenv ~ \
 
 ### Git
 
+Install git-delta. Then, run following commands.
 ```shell
 ln -s ~/dotfiles/.gitconfig ~ \
 && ln -s ~/dotfiles/git/.gitignore ~
