@@ -7,6 +7,7 @@ alias bel="printf '\a'"
 alias sudovim='env SUDO_EDITOR=vim sudoedit'
 alias du='ncdu'
 alias df='duf'
+alias mkpy='source ~/py14/bin/activate'
 alias calcin='. ~/calc/bin/activate'
 # tmux aliases
 alias ts='tmux new -s'
